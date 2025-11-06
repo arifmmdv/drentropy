@@ -3,7 +3,7 @@
 namespace App\Filament\Resources\Blogs\Schemas;
 
 use Filament\Forms\Components\DatePicker;
-use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Select;
@@ -37,7 +37,6 @@ class BlogForm
 
                         TextInput::make('slug')
                             ->required()
-                            ->unique(Category::class, 'slug', ignoreRecord: true)
                             ->columnSpan(1),
 
                         RichEditor::make('content')
@@ -69,8 +68,10 @@ class BlogForm
 
                         Section::make('Media')
                             ->schema([
-                                FileUpload::make('image')
-                                    ->image(),
+                                SpatieMediaLibraryFileUpload::make('image')
+                                    ->conversion('thumb')
+                                    ->conversion('grid')
+                                    ->conversion('preview')
                             ])->columnSpanFull(),
 
                         Section::make('Status')
