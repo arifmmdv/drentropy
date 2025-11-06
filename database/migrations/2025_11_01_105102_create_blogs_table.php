@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->text('content')->nullable();
             $table->json('more_content')->nullable();
+            $table->string('template')->default('blog_details_1')->nullable();
             $table->string('seo_title')->nullable();
             $table->text('seo_description')->nullable();
             $table->date('published_at')->nullable();

@@ -16,7 +16,7 @@ class Blog extends Model implements HasMedia
     use SoftDeletes;
 
     protected $fillable = [
-        'title','slug','content','category_id','more_content','is_visible','seo_title','seo_description','published_at'
+        'title','slug','content','category_id','more_content','is_visible','template','seo_title','seo_description','published_at'
     ];
 
     protected $casts = [

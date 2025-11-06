@@ -1,6 +1,6 @@
 <div class="sidebar-left">
     <div class="header-sidebar d-flex align-items-center justify-content-between py-3">
-        <a href="index.html" class="sidebar-brand fw-bold fs-3 dark-mode-invert">
+        <a href="/" class="sidebar-brand fw-bold fs-3 dark-mode-invert">
             <img src="/assets/imgs/template/logo/logo-dark.svg" alt="Logo" />
         </a>
         <a href="#" class="close-sidebar">

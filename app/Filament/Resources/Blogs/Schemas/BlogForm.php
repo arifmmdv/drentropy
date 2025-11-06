@@ -16,6 +16,7 @@ use Filament\Forms\Components\Builder\Block;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Grid;
 use Illuminate\Support\Str;
+use Filament\Schemas\Components\Utilities\Set;
 
 class BlogForm
 {
@@ -31,9 +32,8 @@ class BlogForm
                         TextInput::make('title')
                             ->required()
                             ->live(onBlur: true)
-                            ->afterStateUpdated(fn (string $operation, $state, callable $set) =>
-                                $operation === 'create' ? $set('slug', Str::slug($state)) : null
-                            )
+                            ->maxLength(255)
+                            ->afterStateUpdated(fn (string $operation, $state, Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null)
                             ->columnSpanFull(),
 
                         Select::make('category_id')
@@ -45,6 +45,7 @@ class BlogForm
                             ->disabled()
                             ->dehydrated()
                             ->required()
+                            ->maxLength(255)
                             ->unique(Blog::class, 'slug', ignoreRecord: true)
                             ->columnSpan(1),
 
@@ -73,6 +74,13 @@ class BlogForm
                                     ->required(),
 
                                 DatePicker::make('published_at'),
+
+                                Select::make('template')
+                                    ->options([
+                                        'blog_details_1' => 'Blog details 1',
+                                        'blog_details_2' => 'Blog details 2',
+                                        'blog_details_3' => 'Blog details 3',
+                                    ])
                             ])->columnSpanFull(),
 
                         Section::make('Media')
@@ -83,7 +91,7 @@ class BlogForm
                                     ->conversion('preview')
                             ])->columnSpanFull(),
 
-                        Section::make('Status')
+                        Section::make('Seo')
                             ->schema([
                                 TextInput::make('seo_title'),
                                 Textarea::make('seo_description'),

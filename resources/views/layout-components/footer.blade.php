@@ -5,7 +5,7 @@
                 <div class="
                 col-lg-4 pe-lg-5">
                     <div class="d-flex gap-2">
-                        <a class="dark-mode-invert" href="index.html"><img src="/assets/imgs/template/logo/logo-dark.svg" alt="magzin"></a>
+                        <a class="dark-mode-invert" href="/"><img src="/assets/imgs/template/logo/logo-dark.svg" alt="magzin"></a>
                         <p class="fs-7 m-0">The colors of life.</p>
                     </div>
                     <p class="fs-7 text-dark mt-4">Blending tech, life, and business. Stay informed with fresh trends, smart insights, and expert takes across every topic that matters.</p>
