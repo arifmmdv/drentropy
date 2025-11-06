@@ -2,6 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', '\App\Http\Controllers\WebController@index');
+Route::get('/blogs/{slug}', '\App\Http\Controllers\WebController@blog');
+Route::get('/blog/{slug}', '\App\Http\Controllers\WebController@category');

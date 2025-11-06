@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Blogs\Schemas;
 
+use App\Models\Blog;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
@@ -14,7 +15,7 @@ use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Builder\Block;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Grid;
-use App\Models\Category;
+use Illuminate\Support\Str;
 
 class BlogForm
 {
@@ -29,14 +30,22 @@ class BlogForm
                     ->schema([
                         TextInput::make('title')
                             ->required()
+                            ->live(onBlur: true)
+                            ->afterStateUpdated(fn (string $operation, $state, callable $set) =>
+                                $operation === 'create' ? $set('slug', Str::slug($state)) : null
+                            )
                             ->columnSpanFull(),
 
                         Select::make('category_id')
                             ->relationship('category','name')
+                            ->required()
                             ->columnSpan(1),
 
                         TextInput::make('slug')
+                            ->disabled()
+                            ->dehydrated()
                             ->required()
+                            ->unique(Blog::class, 'slug', ignoreRecord: true)
                             ->columnSpan(1),
 
                         RichEditor::make('content')

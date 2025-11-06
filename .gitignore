@@ -16,6 +16,7 @@
 /public/build
 /public/hot
 /public/images
+/public/assets/imgs
 /public/storage
 /storage/*.key
 /storage/pail
