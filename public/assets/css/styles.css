@@ -1,0 +1,33 @@
+.rich-editor-content p {
+    color: var(--tc-neutral-900) !important;
+}
+
+.rich-editor-content h4 {
+    margin-bottom: 0 !important;
+}
+
+.rich-editor-content h4 strong {
+    font-weight: var(--tc-fw-semi-bold);
+}
+
+.rich-editor-content blockquote p {
+    font-size: 22px;
+    font-weight: var(--tc-fw-medium) !important;
+    margin: 0 !important;
+}
+
+.rich-editor-content blockquote p strong {
+    font-weight: var(--tc-fw-medium) !important;
+}
+
+.rich-editor-content blockquote p em {
+    font-weight: var(--tc-fw-regular);
+    font-size: var(--tc-fs-7) !important;
+}
+
+.rich-editor-content img {
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+}

@@ -11,162 +11,12 @@
         </a>
     </div>
     <ul class="sidebar-nav list-unstyled ps-0">
-        <li class="nav-item collapse">
-            <a class="nav-link mb-2 collapse-toggle" href="#"> Home </a>
-            <ul class="collapse-menu d-flex flex-column gap-1 list-unstyled">
-                <li><a class="collapse-item" href="index.html">Home 1 - Magazine</a></li>
-                <li><a class="collapse-item" href="index-2.html">Home 2 - Publisher</a></li>
-                <li><a class="collapse-item" href="index-3.html">Home 3 - Blog</a></li>
-                <li><a class="collapse-item" href="index-4.html">Home 4 - Personal</a></li>
-            </ul>
-        </li>
-
-        <li class="nav-item collapse">
-            <a class="nav-link mb-2 collapse-toggle" href="#"> Archive layouts </a>
-            <ul class="collapse-menu d-flex flex-column gap-1 list-unstyled">
-                <li><a class="collapse-item" href="archive-1.html">Archive 1</a></li>
-                <li><a class="collapse-item" href="archive-2.html">Archive 2</a></li>
-                <li><a class="collapse-item" href="archive-3.html">Archive 3</a></li>
-                <li><a class="collapse-item" href="archive-4.html">Archive 4</a></li>
-                <li><a class="collapse-item" href="archive-5.html">Archive 5</a></li>
-            </ul>
-        </li>
-
-        <li class="nav-item collapse">
-            <a class="nav-link mb-2 collapse-toggle" href="#"> Post Layouts </a>
-            <ul class="collapse-menu d-flex flex-column gap-1 list-unstyled">
-                <li><a class="collapse-item" href="single-1.html">Single 1</a></li>
-                <li><a class="collapse-item" href="single-2.html">Single 2</a></li>
-                <li><a class="collapse-item" href="single-3.html">Single 3</a></li>
-            </ul>
-        </li>
-        <li class="nav-item collapse">
-            <a class="nav-link mb-2 collapse-toggle" href="#"> Portfolio layouts </a>
-            <ul class="collapse-menu d-flex flex-column gap-1 list-unstyled">
-                <li><a class="collapse-item" href="portfolio-archive-1.html">Portfolio Archive</a></li>
-                <li><a class="collapse-item" href="portfolio-details.html">Portfolio Details</a></li>
-            </ul>
-        </li>
-        <li class="nav-item collapse">
-            <a class="nav-link mb-2 collapse-toggle" href="#">Pages </a>
-            <ul class="collapse-menu d-flex flex-column gap-1 list-unstyled">
-                <li><a class="collapse-item" href="page-about.html">About us</a></li>
-                <li><a class="collapse-item" href="page-author.html">Author posts</a></li>
-                <li><a class="collapse-item" href="page-search-results.html">Search results</a></li>
-                <li><a class="collapse-item" href="page-contact.html">Contact</a></li>
-                <li><a class="collapse-item" href="page-login.html">Login</a></li>
-                <li><a class="collapse-item" href="page-404.html">404</a></li>
-            </ul>
-        </li>
+        @foreach (\App\Models\Category::all() as $category)
+            <li class="nav-item py-1">
+                <a class="mb-1 fw-medium link-effect-1 " href="/blog/{{$category->slug}}"><span>{{$category->name}}</span></a>
+            </li>
+        @endforeach
     </ul>
-    <div class="block-popular">
-        <h5 class="mb-3">Popular posts</h5>
-        <div class="d-flex flex-column gap-2">
-            <!--prettier-ignore-->
-            <div class="swiper-slide hover-up">
-                <div class="article card-10 style-2">
-                    <div class="hover-effect-1">
-                        <a href="#" class="card-img">
-                            <img class="w-100" src="/assets/imgs/other/img-other-4.png" alt="magzin">
-                        </a>
-                    </div>
-                    <div class="card-body">
-                        <a href="#">
-                            <h6 class="fs-7 mb-2 text-truncate-2">Iconic Film Directors and Their Influence on Cinema</h6>
-                        </a>
-                        <div class="d-flex align-items-center text-600">
-                            <span class="fs-8">16 Jul, 2025</span>
-                            <ul class="ps-4 m-0">
-                                <li>
-                                    <span class="fs-8">6 mins read</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide hover-up">
-                <div class="article card-10 style-2">
-                    <div class="hover-effect-1">
-                        <a href="#" class="card-img">
-                            <img class="w-100" src="/assets/imgs/other/img-other-5.png" alt="magzin">
-                        </a>
-                    </div>
-                    <div class="card-body">
-                        <a href="#">
-                            <h6 class="fs-7 mb-2 text-truncate-2">The Role of Storytelling in Film and Television</h6>
-                        </a>
-                        <div class="d-flex align-items-center text-600">
-                            <span class="fs-8">16 Jul, 2025</span>
-                            <ul class="ps-4 m-0">
-                                <li>
-                                    <span class="fs-8">6 mins read</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide hover-up">
-                <div class="article card-10 style-2">
-                    <div class="hover-effect-1">
-                        <a href="#" class="card-img">
-                            <img class="w-100" src="/assets/imgs/other/img-other-6.png" alt="magzin">
-                        </a>
-                    </div>
-                    <div class="card-body">
-                        <a href="#">
-                            <h6 class="fs-7 mb-2 text-truncate-2">The Impact of AI on Digital Art and Creativity</h6>
-                        </a>
-                        <div class="d-flex align-items-center text-600">
-                            <span class="fs-8">16 Jul, 2025</span>
-                            <ul class="ps-4 m-0">
-                                <li>
-                                    <span class="fs-8">6 mins read</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide hover-up">
-                <div class="article card-10 style-2">
-                    <div class="hover-effect-1">
-                        <a href="#" class="card-img">
-                            <img class="w-100" src="/assets/imgs/other/img-other-7.png" alt="magzin">
-                        </a>
-                    </div>
-                    <div class="card-body">
-                        <a href="#">
-                            <h6 class="fs-7 mb-2 text-truncate-2">Must-See Art Exhibitions Around the World This Year</h6>
-                        </a>
-                        <div class="d-flex align-items-center text-600">
-                            <span class="fs-8">16 Jul, 2025</span>
-                            <ul class="ps-4 m-0">
-                                <li>
-                                    <span class="fs-8">6 mins read</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="swiper slider-1 mt-5 rounded-16">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img class="w-100 rounded-16 overflow-hidden" src="/assets/imgs/other/img-other-8.png" alt="magzin" />
-                </div>
-                <div class="swiper-slide">
-                    <img class="w-100 rounded-16 overflow-hidden" src="/assets/imgs/other/img-other-8-1.png" alt="magzin" />
-                </div>
-                <div class="swiper-slide">
-                    <img class="w-100 rounded-16 overflow-hidden" src="/assets/imgs/other/img-other-8-2.png" alt="magzin" />
-                </div>
-            </div>
-            <div class="swiper-pagination mb-3"></div>
-        </div>
-    </div>
     <div class="sidebar-footer">
         <div class="">
             <div class="d-flex align-items-center">
@@ -186,7 +36,7 @@
     </div>
     <div class="text-center">
         <p class="fs-7">
-            2025 Copyright @ <span class="text-dark">Magzine.</span> <br class="d-none d-lg-block" />
+            <?php echo date('Y') ?> Copyright @ <span class="text-dark">Dr. Entropy</span> <br class="d-none d-lg-block" />
             <span> All Rights Reserved </span>
         </p>
     </div>

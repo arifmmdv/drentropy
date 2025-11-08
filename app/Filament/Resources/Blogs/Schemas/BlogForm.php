@@ -89,6 +89,7 @@ class BlogForm
                                     ->conversion('thumb')
                                     ->conversion('grid')
                                     ->conversion('preview')
+                                    ->conversion('full')
                             ])->columnSpanFull(),
 
                         Section::make('Seo')

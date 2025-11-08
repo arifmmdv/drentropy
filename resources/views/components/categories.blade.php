@@ -7,7 +7,7 @@
                     <div class="post-content text-center">
                         <a href="/blog/{{$category->slug}}" class="d-block">
                             <h6 class="mb-0 changeless">{{$category->name}}</h6>
-                            <p class="fs-8 mt-2 mb-0 text-nowrap fw-medium"><span class="post-count"><span class="odometer text-nowrap" data-count="75"></span> posts</span></p>
+                            <p class="fs-8 mt-2 mb-0 text-nowrap fw-medium"><span class="post-count"><span class="odometer text-nowrap" data-count="{{count($category->blogs)}}"></span> posts</span></p>
                         </a>
                     </div>
                 </div>

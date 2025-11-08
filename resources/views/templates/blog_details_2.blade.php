@@ -3,13 +3,13 @@
 @section('content')
     <section class="sec-1-single-2 pb-70 overflow-hidden">
         <div class="position-relative block-banner">
-            <img class="banner start-50 position-lg-absolute d-lg-block d-none" src="/assets/imgs/page/img-108.png" alt="magzin" />
+            <img class="banner start-50 position-lg-absolute d-lg-block d-none" src="{{ $blog->getFirstMediaUrl('default', 'preview') }}" alt="magzin" />
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 pe-lg-5">
                         <nav aria-label="breadcrumb">
                             <ul class="breadcrumb list-unstyled d-flex flex-row gap-2 align-items-center m-0 ps-0 py-4">
-                                <li class="breadcrumb-item"><a href="index.html" class="text-600 fs-7 hover-dark">Home</a></li>
+                                <li class="breadcrumb-item"><a href="/" class="text-600 fs-7 hover-dark">Home</a></li>
                                 <li class="breadcrumb-item">
                                         <span class="icon-shape icon-xxs">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
@@ -17,38 +17,31 @@
                                             </svg>
                                         </span>
                                 </li>
-                                <li class="breadcrumb-item active text-dark fs-7" aria-current="page">Travel & Culture</li>
+                                <li class="breadcrumb-item active text-dark fs-7" aria-current="page">{{$blog->category->name}}</li>
                             </ul>
                         </nav>
                         <div class="card-title">
                             <div class="article card-info d-flex flex-wrap align-items-center gap-2 mt-4">
-                                <a href="#" class="badge bg-1 fs-8">Lifestyle</a>
-                                <a href="#" class="badge bg-2 fs-8">Culture</a>
+                                <a href="/blog/{{$blog->category->slug}}" class="badge bg-2 fs-8">{{$blog->category->name}}</a>
                                 <ul class="d-flex align-items-center text-600 m-0 ps-3">
                                     <li>
                                         <p class="fs-8 m-0">6 mins read</p>
                                     </li>
                                 </ul>
-                                <h2>Embracing the art of slowing down in a fast-paced world</h2>
+                                <h2>{{$blog->title}}</h2>
                             </div>
                             <div class="border-top"></div>
                             <div class="bottom mt-auto d-flex flex-wrap align-items-center gap-2 pt-4">
                                 <a href="#" class="author d-flex align-items-center gap-2">
-                                    <img class="avatar avatar-md rounded-circle" src="/assets/imgs/template/author/author-9.png" alt="magzin" />
-                                    <span class="fs-7 text-dark fw-regular">Evara Rose</span>
+                                    <img class="avatar avatar-md rounded-circle" src="/assets/imgs/template/author/dr.entropy.jpg" alt="Dr. Entropy" />
+                                    <span class="fs-7 text-dark fw-regular">Dr. Entropy</span>
                                 </a>
                                 <ul class="d-flex align-items-center gap-4 text-600 m-0 ps-3">
                                     <li>
-                                        <p class="fs-8 m-0">Jun 13, 2025</p>
+                                        <p class="fs-8 m-0">{{ $blog->created_at->format('M d, Y') }}</p>
                                     </li>
                                 </ul>
                                 <div class="ms-md-auto ms-5 d-flex align-items-center gap-3 me-5">
-                                    <a href="#" class="comment d-flex align-items-center fs-8">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.50018 5.43423C2.50018 4.26961 3.44494 3.3255 4.61035 3.3255H15.39C16.5554 3.3255 17.5002 4.26961 17.5002 5.43422V13.1078C17.5002 14.2724 16.5554 15.2165 15.39 15.2165H6.3295L3.41902 17.3786C3.24443 17.5083 3.01159 17.5285 2.81722 17.4309C2.62285 17.3333 2.50018 17.1345 2.50018 16.9171V5.43423ZM4.61035 4.47571C4.08062 4.47571 3.65118 4.90485 3.65118 5.43423V15.7729L5.79569 14.1799C5.89495 14.1062 6.01534 14.0663 6.13902 14.0663H15.39C15.9197 14.0663 16.3492 13.6372 16.3492 13.1078V5.43422C16.3492 4.90485 15.9197 4.47571 15.39 4.47571H4.61035Z" fill="#626568" />
-                                        </svg>
-                                        <span><span class="odometer text-nowrap" data-count="98"></span> Comments</span>
-                                    </a>
                                     <a href="#" class="readers d-flex align-items-center fs-8">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                             <path fill-rule="evenodd" clip-rule="evenodd" d="M17.186 10.3224C15.734 13.039 12.9803 14.7266 10.001 14.7266C7.01977 14.7266 4.26612 13.039 2.81407 10.3224C2.70224 10.1114 2.70224 9.88843 2.81407 9.67767C4.26612 6.96107 7.01977 5.27366 10.001 5.27366C12.9803 5.27366 15.7339 6.96107 17.186 9.67767C17.2998 9.88843 17.2998 10.1114 17.186 10.3224ZM18.1135 9.13905C16.4744 6.07185 13.366 4.16669 10.001 4.16669C6.63409 4.16669 3.52561 6.07185 1.88652 9.13905C1.59341 9.68631 1.59341 10.3137 1.88652 10.8606C3.52561 13.9278 6.63409 15.8334 10.001 15.8334C13.366 15.8334 16.4744 13.9278 18.1135 10.8606C18.4066 10.3138 18.4066 9.68631 18.1135 9.13905ZM10.001 12.2707C11.2025 12.2707 12.18 11.2522 12.18 9.99993C12.18 8.7477 11.2025 7.72912 10.001 7.72912C8.79769 7.72912 7.82002 8.7477 7.82002 9.99993C7.82002 11.2522 8.79773 12.2707 10.001 12.2707ZM10.001 6.62215C8.21147 6.62215 6.75752 8.13757 6.75752 9.99997C6.75752 11.8628 8.21151 13.3776 10.001 13.3776C11.7886 13.3776 13.2425 11.8627 13.2425 9.99997C13.2425 8.13757 11.7886 6.62215 10.001 6.62215Z" fill="#626568" />
@@ -60,7 +53,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6 d-block d-lg-none pb-4">
-                        <img class="banner" src="/assets/imgs/page/img-108.png" alt="magzin" />
+                        <img class="banner" src="{{ $blog->getFirstMediaUrl('default', 'preview') }}" alt="{{$blog->title}}" />
                     </div>
                 </div>
             </div>
@@ -69,37 +62,8 @@
             <div class="row">
                 <div class="col-lg-9 col-md-10 offset-lg-1 offset-md-1">
                     <!-- prettier-ignore -->
-                    <div class="d-flex flex-column gap-3">
-                        <p class="text-dark">In an era defined by rapid notifications, endless to-do lists, and the constant chase for productivity, slowing down can feel like a rebellious act. We’ve been conditioned to believe that faster is better—that success lies in motion, in multitasking, in the hustle. But what if the real fulfillment comes not from doing more, but from doing less, more intentionally?</p>
-                        <h4 class="mb-0">The Illusion of Busyness</h4>
-                        <p class="text-dark m-0">Being busy has become a badge of honor. We equate packed schedules with importance and equate stillness with laziness. But chronic busyness often leaves us feeling disconnected—from ourselves, from others, and from the present moment. Our minds race ahead to the next task while our bodies lag behind, overwhelmed and fatigued.</p>
-                        <p class="text-dark m-0">Slowing down doesn’t mean giving up ambition. It means reclaiming your time, your attention, and your presence. It’s about living in alignment with what truly matters.</p>
-                        <img class="rounded-8 my-4 overflow-hidden" src="/assets/imgs/page/img-114.png" alt="magzin">
-                        <h4 class="mb-0">Why Slowing Down Matters</h4>
-                        <p class="text-dark m-0">When we pause, we allow space for reflection. Without constant noise and motion, we gain perspective on what truly matters. Slowing down helps us make better decisions—not just faster ones. Fast living often robs us of joy. We rush through meals, conversations, and even achievements without fully experiencing them. Moving at a slower pace lets us savor small pleasures: a hot cup of tea, a sunset, a moment of silence.</p>
-                        <p class="text-dark m-0">Constant urgency places immense strain on our nervous system. Slowing down restores balance. It allows our minds to reset and our bodies to heal—preventing the long-term toll of chronic stress.</p>
-                        <blockquote class="blockquote">
-                            <p class="text-dark m-0 fs-22 fw-medium">There’s more to life than simply increasing its speed. In quiet pauses, we reconnect with who we are, what we love, and why it all matters.</p>
-                            <p class="fs-7 mb-0">By <span class="text-dark">Jimmy Dave</span></p>
-                        </blockquote>
-                        <h4 class="mb-0">Small Ways to Embrace Slowness</h4>
-                        <ul class="list-unstyled ps-0 m-0">
-                            <li>
-                                <p class="text-dark m-0 fw-semi-bold">Start your day slowly:<span class="text-600 fw-regular"> Resist the urge to check your phone the moment you wake up. Take a few deep breaths, stretch, or journal. Focus on one thing at a time. Eat without distraction. Walk without headphones. Listen without interrupting.</span></p>
-                            </li>
-                            <li>
-                                <p class="text-dark m-0 fw-semi-bold">Take mindful breaks:<span class="text-600 fw-regular"> Step away from your screen. Breathe. Step outside. Reconnect with your senses. Say no to what drains you. Prioritize rest without guilt.</span></p>
-                            </li>
-                            <li>
-                                <p class="text-dark m-0 fw-semi-bold">Practice gratitude<span class="text-600 fw-regular"> : Slowing down helps you notice what’s already good in your life—moments often missed in the rush.</span></p>
-                            </li>
-                        </ul>
-                        <h4 class="mb-0">Slowness as a Strength</h4>
-                        <p class="text-dark m-0">The art of slowing down is not about doing less—it’s about doing better. When we take our time, we live more fully. We give ourselves the chance to savor, to reflect, to connect, and to be human in a world that constantly pushes us to be machines.</p>
-                        <p class="text-dark m-0">In choosing slowness, we choose intention over impulse, meaning over momentum. We learn that life isn’t a race to the finish line—but a journey best experienced one mindful step at a time.</p>
-                        <h4 class="mb-0">Conclusion</h4>
-                        <p class="text-dark m-0">Slowing down is not about falling behind—it’s about catching up with yourself. In a culture that glorifies constant motion, choosing stillness is a courageous act. It's a return to intention, to presence, and to the quieter rhythms of life that often hold the greatest meaning.</p>
-                        <p class="text-dark m-0">Whether it's taking a deep breath between tasks, unplugging for an afternoon, or simply savoring your morning coffee without distraction, each small act of slowness is a step toward a more mindful, fulfilling life.s</p>
+                    <div class="d-flex flex-column gap-3 rich-editor-content">
+                        {!! $blog->content !!}
                         <div class="border-top mt-5 mb-1"></div>
                         <div class="d-flex flex-wrap gap-4 align-items-center justify-content-between mb-4">
                             <div class="d-flex align-items-center gap-2">
@@ -148,5 +112,11 @@
         </div>
     </section>
 
-    @include('components.blog.recommended-for-you')
+    @php
+        $blogs = \App\Models\Blog::where('category_id', $blog->category_id)->where('id','!=',$blog->id)->latest()->take(5)->get();
+    @endphp
+
+    @if(count($blogs) > 0)
+        @include('components.blog.recommended-for-you', ['blogs' => $blogs])
+    @endif
 @endsection

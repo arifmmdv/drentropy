@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="/assets/css/vendors/odometer.css">
     <!-- Main CSS -->
     <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 
 <body>

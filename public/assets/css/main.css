@@ -2879,7 +2879,6 @@ Preloader
   transition: color 0.2s ease;
 }
 .sidebar-left .sidebar-footer {
-  margin-top: 60px;
   margin-bottom: 30px;
   display: flex;
   padding: 30px;
@@ -2891,9 +2890,9 @@ Preloader
   border: 1px solid var(--tc-neutral-200);
   background-color: var(--tc-system-white);
 }
-.sidebar-left .sidebar-footer .form-control {
-  max-width: 275px;
-}
+/*.sidebar-left .sidebar-footer .form-control {*/
+/*  max-width: 275px;*/
+/*}*/
 
 .sidebar-overlay {
   position: fixed;
@@ -2951,14 +2950,14 @@ strong {
   color: var(--tc-neutral-800);
 }
 
-.blockquote {
+blockquote {
   background-color: var(--tc-neutral-100);
   padding: 100px 40px 40px 40px;
   border-radius: 8px;
   position: relative;
   margin: 20px auto;
 }
-.blockquote:before {
+blockquote:before {
   left: 40px;
   top: 40px;
   width: 32px;
@@ -2971,7 +2970,7 @@ strong {
   font-size: 32px;
 }
 @media (min-width: 768px) {
-  .blockquote {
+  blockquote {
     padding: 40px 40px 40px 110px;
   }
 }

@@ -101,7 +101,7 @@
                                 <p class="card-text text-600 fs-7 mb-0 mt-4 text-truncate-2">Once dismissed as counterculture, urban fashion has climbed its way from city sidewalks to the catwalks of major fashion capitals.</p>
                                 <div class="bottom mt-auto d-flex flex-wrap align-items-center gap-2 pt-4">
                                     <a href="@@link-author" class="author d-flex align-items-center gap-2">
-                                        <img class="avatar avatar-md rounded-circle" src="/assets/imgs/template/author/author-7.png" alt="magzin">
+                                        <img class="avatar avatar-md rounded-circle" src="/assets/imgs/template/author/dr.entropy.jpg" alt="magzin">
                                         <span class="fs-7 text-dark fw-regular">Evara Rose</span>
                                     </a>
                                     <ul class="d-flex align-items-center gap-4 text-600 m-0 ps-3">

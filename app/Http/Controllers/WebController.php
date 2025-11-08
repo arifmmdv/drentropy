@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,14 @@ class WebController extends Controller
     }
 
     public function blog($slug) {
-        return view("templates.blog_details_".$slug);
+        $blog = Blog::where('slug', $slug)->firstOrFail();
+
+        $allowedTemplates = ['blog_details_1', 'blog_details_2', 'blog_details_3'];
+        $template = in_array($blog->template, $allowedTemplates)
+            ? $blog->template
+            : 'blog_details_1';
+
+        return view("templates." . $template, compact('blog'));
     }
 
     public function category($slug) {

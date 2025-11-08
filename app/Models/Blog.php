@@ -31,16 +31,21 @@ class Blog extends Model implements HasMedia
     public function registerMediaConversions(?Media $media = null): void
     {
         $this->addMediaConversion('thumb')
-            ->fit(Fit::Contain, 128, 128)
+            ->fit(Fit::Contain, 320, 213)
             ->nonQueued();
 
         $this->addMediaConversion('grid')
-            ->fit(Fit::Contain, 320, 320)
+            ->fit(Fit::Contain, 575, 383)
             ->nonQueued();
 
         $this->addMediaConversion('preview')
-            ->width(720)
-            ->height(720)
+            ->width(900)
+            ->height(600)
+            ->nonQueued();
+
+        $this->addMediaConversion('full')
+            ->width(1200)
+            ->height(800)
             ->nonQueued();
     }
 }
