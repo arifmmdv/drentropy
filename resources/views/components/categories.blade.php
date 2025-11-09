@@ -1,7 +1,7 @@
 <section class="sec-2-home-2">
     <div class="container">
-        <div class="row g-3">
-            @foreach (\App\Models\Category::all() as $category)
+        <div class="justify-content-center row g-3">
+            @foreach (\App\Models\Category::where('is_visible', true)->get() as $category)
             <div class="col-lg-2 col-md-4 col-12">
                 <div class="category-card style-2 w-100 hover-up" data-background="assets/imgs/page/img-20.png">
                     <div class="post-content text-center">

@@ -1,5 +1,5 @@
 <div class="article card-11">
-    <div class="hover-effect-1">
+    <div class="w-100 hover-effect-1">
         <div class="card-img-top thumbnail">
             <a href="/blogs/{{$blog->slug}}">
                 <img src="{{ $blog->getFirstMediaUrl('default', 'grid') }}" alt="{{$blog->title}}" class="cover-image">

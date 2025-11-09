@@ -1,12 +1,18 @@
+.rich-editor-content {
+    padding-top: 32px;
+}
 .rich-editor-content p {
     color: var(--tc-neutral-900) !important;
 }
 
-.rich-editor-content h4 {
+.rich-editor-content h4, h3 {
+    font-size: 31px;
+    margin-top: 1rem !important; !important;
     margin-bottom: 0 !important;
+    font-weight: var(--tc-fw-semi-bold);
 }
 
-.rich-editor-content h4 strong {
+.rich-editor-content h4, h3 strong {
     font-weight: var(--tc-fw-semi-bold);
 }
 
@@ -30,4 +36,16 @@
     overflow: hidden !important;
     margin-top: 1.5rem !important;
     margin-bottom: 1.5rem !important;
+}
+
+.article.card-7 .card-title {
+    min-height: 45px;
+}
+
+.rich-editor-content p + ul {
+    margin-top: 0 !important;
+}
+
+.sec-1-single-2 .card-title h2 {
+    min-height: 115px;
 }

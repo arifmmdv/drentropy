@@ -11,7 +11,7 @@
         </a>
     </div>
     <ul class="sidebar-nav list-unstyled ps-0">
-        @foreach (\App\Models\Category::all() as $category)
+        @foreach (\App\Models\Category::where('is_visible', true)->get() as $category)
             <li class="nav-item py-1">
                 <a class="mb-1 fw-medium link-effect-1 " href="/blog/{{$category->slug}}"><span>{{$category->name}}</span></a>
             </li>

@@ -1,5 +1,5 @@
 @php
-    $blogs = \App\Models\Blog::latest()->take(5)->get();
+    $blogs = \App\Models\Blog::latest()->where('is_visible', true)->take(5)->get();
 @endphp
 <section class="sec-5-home-2 sec-padding overflow-hidden">
     <div class="container">

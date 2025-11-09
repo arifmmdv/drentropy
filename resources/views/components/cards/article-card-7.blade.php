@@ -15,7 +15,11 @@
                 <a href="#" class="badge bg-1 fs-8">{{$blog->category->name}}</a>
                 <ul class="d-flex align-items-center text-600 m-0 ps-3">
                     <li>
-                        <p class="fs-8 m-0">6 mins read</p>
+                        @php
+                            $wordCount = str_word_count(strip_tags($blog->content));
+                            $readingTime = ceil($wordCount / 200);
+                        @endphp
+                        <p class="fs-8 m-0">{{ $readingTime }} min{{ $readingTime > 1 ? 's' : '' }} read</p>
                     </li>
                 </ul>
 {{--                <a href="#" class="book-mark ms-auto">--}}

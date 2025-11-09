@@ -25,10 +25,14 @@
                                 <a href="/blog/{{$blog->category->slug}}" class="badge bg-2 fs-8">{{$blog->category->name}}</a>
                                 <ul class="d-flex align-items-center text-600 m-0 ps-3">
                                     <li>
-                                        <p class="fs-8 m-0">6 mins read</p>
+                                        @php
+                                            $wordCount = str_word_count(strip_tags($blog->content));
+                                            $readingTime = ceil($wordCount / 200);
+                                        @endphp
+                                        <p class="fs-8 m-0">{{ $readingTime }} min{{ $readingTime > 1 ? 's' : '' }} read</p>
                                     </li>
                                 </ul>
-                                <h2>{{$blog->title}}</h2>
+                                <h2 class="w-100">{{$blog->title}}</h2>
                             </div>
                             <div class="border-top"></div>
                             <div class="bottom mt-auto d-flex flex-wrap align-items-center gap-2 pt-4">
@@ -62,7 +66,7 @@
             <div class="row">
                 <div class="col-lg-9 col-md-10 offset-lg-1 offset-md-1">
                     <!-- prettier-ignore -->
-                    <div class="d-flex flex-column gap-3 rich-editor-content">
+                    <div class="d-flex flex-column rich-editor-content">
                         {!! $blog->content !!}
                         <div class="border-top mt-5 mb-1"></div>
                         <div class="d-flex flex-wrap gap-4 align-items-center justify-content-between mb-4">
@@ -113,7 +117,7 @@
     </section>
 
     @php
-        $blogs = \App\Models\Blog::where('category_id', $blog->category_id)->where('id','!=',$blog->id)->latest()->take(5)->get();
+        $blogs = \App\Models\Blog::where('category_id', $blog->category_id)->where('id','!=',$blog->id)->latest()->take(4)->get();
     @endphp
 
     @if(count($blogs) > 0)

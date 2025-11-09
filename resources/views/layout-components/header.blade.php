@@ -10,7 +10,7 @@
 
                 <div class="navbar-collapse d-none d-lg-block" id="navbarNav">
                     <ul class="navbar-nav">
-                        @foreach (\App\Models\Category::all() as $category)
+                        @foreach (\App\Models\Category::where('is_visible', true)->get() as $category)
                             <li class="nav-item">
                                 <a class="nav-link link-effect-1 " href="/blog/{{$category->slug}}"><span>{{$category->name}}</span></a>
                             </li>

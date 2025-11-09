@@ -71,11 +71,11 @@
     <section class="sec-1-archive-1">
         <div class="container">
             <div class="row g-4 mt-4">
-                @foreach($category->blogs as $blog)
+                @foreach($blogs as $blog)
                     <div class="col-lg-4 col-md-6 col-12">
                         @include('components.cards.article-card-7', ['blog' => $blog])
                     </div>
-                    @if($loop->iteration === 4 || $loop->last)
+                    @if($loop->iteration === 3)
                         <div class="col-lg-4 col-md-6 col-12">
                             <div class="newsletter">
                                 <div class="decorate-1" data-background="assets/imgs/template/decorate-1.png"></div>

@@ -388,5 +388,11 @@
         </div>
     </section>
 
-    @include('components.blog.recommended-for-you')
+    @php
+        $blogs = \App\Models\Blog::where('category_id', $blog->category_id)->where('id','!=',$blog->id)->latest()->take(5)->get();
+    @endphp
+
+    @if(count($blogs) > 0)
+        @include('components.blog.recommended-for-you', ['blogs' => $blogs])
+    @endif
 @endsection

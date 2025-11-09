@@ -32,20 +32,32 @@ class Blog extends Model implements HasMedia
     {
         $this->addMediaConversion('thumb')
             ->fit(Fit::Contain, 320, 213)
+            ->format('webp')
+            ->quality(90)
+            ->sharpen(5)
             ->nonQueued();
 
         $this->addMediaConversion('grid')
             ->fit(Fit::Contain, 575, 383)
+            ->format('webp')
+            ->quality(90)
+            ->sharpen(5)
             ->nonQueued();
 
         $this->addMediaConversion('preview')
             ->width(900)
             ->height(600)
+            ->format('webp')
+            ->quality(92)
+            ->sharpen(5)
             ->nonQueued();
 
         $this->addMediaConversion('full')
             ->width(1200)
             ->height(800)
+            ->format('webp')
+            ->quality(92)
+            ->sharpen(5)
             ->nonQueued();
     }
 }
