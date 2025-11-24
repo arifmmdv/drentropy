@@ -22,7 +22,7 @@
             <a href="/blogs/{{$blog->slug}}" class="hover-underline">
                 <h5 class="card-title mb-0 text-truncate-2">{{$blog->title}}</h5>
             </a>
-            <p class="card-text text-600 fs-7 mb-0 mt-4 text-truncate-2">Once dismissed as counterculture, urban fashion has climbed its way from city sidewalks to the catwalks of major fashion capitals.</p>
+            <p class="card-text text-600 fs-7 mb-0 mt-4 text-truncate-2">{{Str::limit(strip_tags($blog->content), 150)}}</p>
             <div class="bottom mt-auto d-flex flex-wrap align-items-center gap-2 pt-4">
                 <a href="/about" class="author d-flex align-items-center gap-2">
                     <img class="avatar avatar-md rounded-circle" src="/assets/imgs/template/author/dr.entropy.jpg" alt="magzin">

@@ -43,7 +43,7 @@
                     </svg>
                 </a>
             </div>
-            <p class="card-text text-600 fs-7 mb-0 mt-4 pe-5 text-truncate-3">When brushstrokes inspire hemlines and canvases shape silhouettes, the result is a striking fusion of visual art and fashion design.</p>
+            <p class="card-text text-600 fs-7 mb-0 mt-4 pe-5 text-truncate-3">{{Str::limit(strip_tags($blog->content), 120)}}</p>
         </div>
     </div>
 </div>

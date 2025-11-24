@@ -34,4 +34,12 @@ class WebController extends Controller
 
         return view("templates." . $template, compact('category', 'blogs'));
     }
+
+    public function tag($slug) {
+        $tagObject = \Spatie\Tags\Tag::where('slug->en', $slug)->firstOrFail();
+        $tag = $tagObject->name;
+        $blogs = Blog::withAnyTags([$tag])->where('is_visible', true)->orderBy('created_at','DESC')->get();
+
+        return view("templates.tag", compact('tag', 'blogs'));
+    }
 }

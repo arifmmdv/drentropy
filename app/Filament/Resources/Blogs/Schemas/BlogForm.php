@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Blogs\Schemas;
 use App\Models\Blog;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use Filament\Forms\Components\SpatieTagsInput;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Select;
@@ -40,6 +41,8 @@ class BlogForm
                             ->relationship('category','name')
                             ->required()
                             ->columnSpan(1),
+
+                        SpatieTagsInput::make('tags')->columnSpan(1),
 
                         TextInput::make('slug')
                             ->disabled()

@@ -23,10 +23,11 @@
                 <div class="col-12">
                     <div class="bottom-footer2 d-flex flex-wrap justify-content-lg-between
                     justify-content-center align-items-center gap-lg-5 gap-3">
-                        <p class="text-500 m-0"><?php echo date('Y') ?> Copyright @ <span class="text-dark">Dr. Entropy</span>. All Rights Reserved</p>
+                        <p class="text-500 m-0"><?php echo date('Y') ?> Copyright @ <span class="text-dark">Dr. Entropy</span></p>
                         <div class="d-flex flex-wrap justify-content-center align-items-center gap-lg-5 gap-4">
+                            All Rights Reserved.
 {{--                            <a href="#" class="text-500 hover-dark d-block fs-7 button-effect-1">About me</a>--}}
-                            <a href="#" class="text-500 hover-dark d-block fs-7 button-effect-1">Contact</a>
+{{--                            <a href="#" class="text-500 hover-dark d-block fs-7 button-effect-1">Contact</a>--}}
                         </div>
                     </div>
                 </div>

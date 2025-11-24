@@ -75,35 +75,35 @@
                     <div class="col-lg-4 col-md-6 col-12">
                         @include('components.cards.article-card-7', ['blog' => $blog])
                     </div>
-                    @if($loop->iteration === 3)
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="newsletter">
-                                <div class="decorate-1" data-background="assets/imgs/template/decorate-1.png"></div>
-                                <div class="">
-                                    <div class="d-flex align-items-center">
-                                        <svg class="dark-mode-invert" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                            <path d="M4.75 7.75C4.75 6.64543 5.64543 5.75 6.75 5.75H17.25C18.3546 5.75 19.25 6.64543 19.25 7.75V16.25C19.25 17.3546 18.3546 18.25 17.25 18.25H6.75C5.64543 18.25 4.75 17.3546 4.75 16.25V7.75Z" stroke="#0E0E0F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M5.5 6.5L12 12.25L18.5 6.5" stroke="#0E0E0F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                        <span class="fs-7 fw-semibold">Newsletter</span>
-                                    </div>
-                                    <h5 class="my-2">
-                                        Weekly updates? <br class="d-none d-lg-block">
-                                        We've got you covered. Subscribe now
-                                    </h5>
-                                    <p class="m-0 fs-7">You'll only receive updates on new templates, no spam, just what you signed up for.</p>
-                                </div>
-                                <form action="#" class="w-auto">
-                                    <input type="email" class="form-control fs-7 mb-2 w-100" placeholder="Your email address">
-                                    <button type="submit" class="btn btn-dark w-100 button-effect-1">Subscribe</button>
-                                </form>
-                                <div class="d-flex align-items-center gap-3">
-                                    <a href="#" class="text-600 fs-8">Term & Condition</a>
-                                    <a href="#" class="text-600 fs-8">Private policy</a>
-                                </div>
-                            </div>
-                        </div>
-                    @endif
+{{--                    @if($loop->iteration === 3)--}}
+{{--                        <div class="col-lg-4 col-md-6 col-12">--}}
+{{--                            <div class="newsletter">--}}
+{{--                                <div class="decorate-1" data-background="assets/imgs/template/decorate-1.png"></div>--}}
+{{--                                <div class="">--}}
+{{--                                    <div class="d-flex align-items-center">--}}
+{{--                                        <svg class="dark-mode-invert" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">--}}
+{{--                                            <path d="M4.75 7.75C4.75 6.64543 5.64543 5.75 6.75 5.75H17.25C18.3546 5.75 19.25 6.64543 19.25 7.75V16.25C19.25 17.3546 18.3546 18.25 17.25 18.25H6.75C5.64543 18.25 4.75 17.3546 4.75 16.25V7.75Z" stroke="#0E0E0F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />--}}
+{{--                                            <path d="M5.5 6.5L12 12.25L18.5 6.5" stroke="#0E0E0F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />--}}
+{{--                                        </svg>--}}
+{{--                                        <span class="fs-7 fw-semibold">Newsletter</span>--}}
+{{--                                    </div>--}}
+{{--                                    <h5 class="my-2">--}}
+{{--                                        Weekly updates? <br class="d-none d-lg-block">--}}
+{{--                                        We've got you covered. Subscribe now--}}
+{{--                                    </h5>--}}
+{{--                                    <p class="m-0 fs-7">You'll only receive updates on new templates, no spam, just what you signed up for.</p>--}}
+{{--                                </div>--}}
+{{--                                <form action="#" class="w-auto">--}}
+{{--                                    <input type="email" class="form-control fs-7 mb-2 w-100" placeholder="Your email address">--}}
+{{--                                    <button type="submit" class="btn btn-dark w-100 button-effect-1">Subscribe</button>--}}
+{{--                                </form>--}}
+{{--                                <div class="d-flex align-items-center gap-3">--}}
+{{--                                    <a href="#" class="text-600 fs-8">Term & Condition</a>--}}
+{{--                                    <a href="#" class="text-600 fs-8">Private policy</a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    @endif--}}
                 @endforeach
             </div>
 {{--            Pagination--}}
@@ -153,30 +153,30 @@
         </div>
     </section>
     <!--Home 4 Section 6-->
-    <section class="sec-6-home-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 d-flex justify-content-center">
-                    <div class="block-newsletter bg-transparent border-0 position-relative">
-                        <div class="newsletter text-center">
-                            <div class="block-title">
-                                <h4 class="mb-3 text-anime-style-3">Subscribe to our newsletter</h4>
-                                <p class="mb-4">
-                                    Subscribe to our email newsletter to get the latest <br class="d-none d-lg-block">
-                                    posts delivered right to your email.
-                                </p>
-                            </div>
-                            <form action="#" class="position-relative">
-                                <div class="d-flex flex-wrap flex-md-nowrap justify-content-center gap-2 align-items-center mb-4">
-                                    <input class="form-control" type="text" placeholder="Your email address">
-                                    <button class="btn btn-dark button-effect-1" type="submit">Subscribe</button>
-                                </div>
-                                <span class="fs-7 fw-regular">You’ll only receive valuable news updates—no spam.</span>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+{{--    <section class="sec-6-home-4">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-12 d-flex justify-content-center">--}}
+{{--                    <div class="block-newsletter bg-transparent border-0 position-relative">--}}
+{{--                        <div class="newsletter text-center">--}}
+{{--                            <div class="block-title">--}}
+{{--                                <h4 class="mb-3 text-anime-style-3">Subscribe to our newsletter</h4>--}}
+{{--                                <p class="mb-4">--}}
+{{--                                    Subscribe to our email newsletter to get the latest <br class="d-none d-lg-block">--}}
+{{--                                    posts delivered right to your email.--}}
+{{--                                </p>--}}
+{{--                            </div>--}}
+{{--                            <form action="#" class="position-relative">--}}
+{{--                                <div class="d-flex flex-wrap flex-md-nowrap justify-content-center gap-2 align-items-center mb-4">--}}
+{{--                                    <input class="form-control" type="text" placeholder="Your email address">--}}
+{{--                                    <button class="btn btn-dark button-effect-1" type="submit">Subscribe</button>--}}
+{{--                                </div>--}}
+{{--                                <span class="fs-7 fw-regular">You’ll only receive valuable news updates—no spam.</span>--}}
+{{--                            </form>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 @endsection

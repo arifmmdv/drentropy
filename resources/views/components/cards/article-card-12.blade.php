@@ -21,7 +21,7 @@
             <a href="/blogs/{{$blog->slug}}" class="hover-underline">
                 <h4 class="card-title mb-0 mt-3">{{$blog->title}}</h4>
             </a>
-            <p class="card-text text-600 fs-7 mb-0 mt-3 text-truncate-3"> In an age of constant notifications and never-ending to-do lists, slowing down can feel like a luxury. But embracing a slower, more intentional lifestyle can lead to greater clarity, deeper relationships, and a stronger sense of self.</p>
+            <p class="card-text text-600 fs-7 mb-0 mt-3 text-truncate-3"> {{Str::limit(strip_tags($blog->content), 300)}}</p>
             <div class="bottom mt-auto d-flex flex-wrap align-items-center gap-2 pt-5">
                 <a href="/about" class="author d-flex align-items-center gap-2">
                     <img class="avatar avatar-md rounded-circle" src="/assets/imgs/template/author/dr.entropy.jpg" alt="magzin">

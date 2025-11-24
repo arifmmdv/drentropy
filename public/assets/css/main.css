@@ -33,7 +33,7 @@ Table of contents
 :root {
   --tc-body-font-family: Geist;
   --tc-heading-font-family: Geist;
-  --tc-body-font-size: 16px;
+  --tc-body-font-size: 20px;
   --tc-fs-1: 40px;
   --tc-fs-2: 32px;
   --tc-fs-3: 28px;
@@ -54,7 +54,7 @@ Table of contents
   --tc-ds-xs-4: 36px;
   --tc-ds-xs-5: 28px;
   --tc-ds-xs-6: 24px;
-  --tc-body-line-height: 1.5;
+  --tc-body-line-height: 1.6;
   --tc-heading-line-height: 1.2;
   --tc-neutral-50: #f7f8f9;
   --tc-neutral-100: #eaecee;
@@ -129,6 +129,8 @@ html {
    */
 body {
   margin: 0;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
 }
 
 /**

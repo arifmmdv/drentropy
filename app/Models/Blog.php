@@ -9,10 +9,12 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\Image\Enums\Fit;
+use Spatie\Tags\HasTags;
 
 class Blog extends Model implements HasMedia
 {
     use InteractsWithMedia;
+    use HasTags;
     use SoftDeletes;
 
     protected $fillable = [
